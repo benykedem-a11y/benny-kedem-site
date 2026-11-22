@@ -4,11 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>בני קדם – מטפל במגע</title>
-<meta name="description" content="בני קדם, מעסה טיפולי: עיסוי רקמות עמוקות, עיסוי ספורטאים ועיסוי רפואי משולב.">
+<meta name="description" content="בני קדם, מעסה טיפולי: עיסוי רקמות עמוקות, עיסוי ספורטאים ועיסוי רפואי משולב, בביקור בית במרכז, בשרון ובשומרון.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2310223A%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-size=%2734%27 text-anchor=%27middle%27 fill=%27%23C99A3E%27 font-family=%27serif%27%3E%D7%91%D7%A7%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bennykedem.com/">
+<meta property="og:title" content="בני קדם – מעסה טיפולי בביקור בית">
+<meta property="og:description" content="עיסוי רפואי משולב, רקמות עמוקות, ספורטאים ועוד. בביקור בית במרכז, בשרון ובשומרון.">
+<meta property="og:image" content="https://bennykedem.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@400;600;700&display=swap">
 <style>
 body{margin:0}img{max-width:100%}
+.skip{position:absolute;top:-60px;right:12px;z-index:1000;background:#10223A;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}.skip:focus{top:12px}
 /* Layout: modern single-therapist clinic — clear message in the first screen, rounded photo frames, calm blue palette with a deep navy band for treatments and booking */
 :root{
   --bg:#F4F7FB;        /* morning air */
@@ -522,6 +533,7 @@ footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:spac
 </style>
 </head>
 <body>
+<a class="skip" href="#top">דלג לתוכן</a>
 <div dir="rtl" lang="he">
 
 <header class="top"><div class="wrap">
@@ -750,6 +762,7 @@ footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:spac
         <ul class="info-list">
           <li><span>טלפון</span><bdi dir="ltr">050-239-4939</bdi></li>
           <li><span>טיפולים</span>בביקור בית, אצלכם</li>
+          <li><span>אזורי שירות</span>בעיקר במרכז, וגם בשרון ובשומרון</li>
           <li><span>שעות</span>א׳–ה׳: 7:30 עד 21:00 · ו׳: 9:00 עד 15:30</li>
         </ul>
       </div>
@@ -766,7 +779,7 @@ footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:spac
         <p><b>מצב רפואי:</b> כדי שהטיפול יצליח ויתאים לכם, חשוב לספר לי מראש על כל בעיה רפואית ועל כל אבחנה שיש לכם.</p>
         <p><b>פרטיות:</b> הפרטים שתמלאו מיועדים רק לי, כדי שאוכל לחזור אליכם ולתאם טיפול. האתר עצמו לא שומר אותם. על מצב רפואי נדבר בשיחה, ולא בטופס.</p>
       </div>
-      <div class="f full consent" id="consentRow"><label for="consent"><input type="checkbox" id="consent"> אני מסכים/ה שהפרטים יישלחו לבני גם במייל, דרך Web3Forms, שירות חיצוני לשליחת טפסים שבו הם נשמרים עד 30 יום. בלי הסימון, הפנייה תישלח רק בוואטסאפ.</label></div>
+      <div class="f full consent" id="consentRow"><label for="consent"><input type="checkbox" id="consent"> אני מסכים/ה שהפרטים יישלחו לבני גם במייל, דרך Web3Forms, שירות חיצוני לשליחת טפסים. בלי הסימון, הפנייה תישלח רק בוואטסאפ.</label></div>
       <div class="f full"><button class="btn gold send" type="submit">שליחה</button></div>
       <div class="done" id="done" hidden>
         <strong id="doneTitle">תודה, הפרטים מוכנים.</strong>
@@ -793,7 +806,7 @@ const WHATSAPP = "972502394939";      // הוואטסאפ של בני, בפור�
 const WEB3FORMS_KEY = "";             // מפתח מ-web3forms.com: כל פנייה תישלח גם למייל של בני
 // ----------------
 const $=id=>document.getElementById(id);
-if(!WEB3FORMS_KEY) $('consentRow').hidden=true; // no key yet: email relay is off, so no consent to ask for
+if(!WEB3FORMS_KEY){ $('consentRow').hidden=true; document.querySelector('.send').textContent='הכנת הודעה לוואטסאפ'; } // no key yet: email relay is off, so no consent to ask for
 const SOCIAL={instagram:"https://www.instagram.com/bensportmassage/",facebook:"https://www.facebook.com/benny.k.mizrahi"}; // קישורים לאינסטגרם ולפייסבוק של בני; ריק = מוסתר
 document.querySelectorAll('[data-social]').forEach(a=>{const u=SOCIAL[a.dataset.social];if(u){a.href=u;a.hidden=false}});
 {const t=$('toTop');const upd=()=>t.classList.toggle('show',scrollY>innerHeight*.8);addEventListener('scroll',upd,{passive:true});upd();}
@@ -823,7 +836,7 @@ fetch('data/reviews.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d
   if(!d)return;
   if(d.rating) document.querySelectorAll('.g-rating').forEach(el=>el.textContent=Number(d.rating).toFixed(1));
   if(d.count) document.querySelectorAll('.g-count').forEach(el=>el.textContent=d.count);
-  const list=(d.reviews||[]).filter(r=>r.text&&r.rating>=4);
+  const list=(d.reviews||[]).filter(r=>r.text);
   if(!list.length)return;
   track.replaceChildren(...list.map(r=>{
     const f=document.createElement('figure');f.className='quote';
@@ -839,7 +852,7 @@ fetch('data/reviews.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d
 
 $('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const n=$('name').value.trim(),p=$('phone').value.trim(),okPhone=/^[0-9+\-\s]{9,}$/.test(p);
+  const n=$('name').value.trim(),p=$('phone').value.trim(),okPhone=/^(?:\+972|0)(?:5\d{8}|7\d{8}|[2-489]\d{7})$/.test(p.replace(/[\s\-]/g,''));
   $('e-name').textContent=n?'':'נא למלא שם';
   $('e-phone').textContent=okPhone?'':'נא למלא מספר טלפון תקין';
   if(!n||!okPhone) return;
