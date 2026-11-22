@@ -477,6 +477,20 @@ footer a:hover{color:var(--gold)}
 @media (max-width:900px){.certs ol{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.certs ol{grid-template-columns:1fr}}
 
+/* framed page: the site sits in a centered frame with breathing room on wide screens */
+:root{--frame:#DFE7F0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--frame:#050A12}}
+:root[data-theme="dark"]{--frame:#050A12}
+body{background:var(--frame)}
+body > div[dir="rtl"]{max-width:1320px;margin-inline:auto;background:var(--bg);box-shadow:0 0 0 1px color-mix(in srgb,var(--gold) 18%,transparent),0 30px 80px -40px rgba(10,25,45,.35)}
+@media (min-width:1380px){body > div[dir="rtl"]{margin-block:28px;border-radius:28px;overflow:clip}}
+.wrap{padding-left:max(clamp(20px,4vw,56px),env(safe-area-inset-left,0px));padding-right:max(clamp(20px,4vw,56px),env(safe-area-inset-right,0px))}
+.reasons .wrap{grid-template-columns:1fr}
+.reasons .copy{max-width:40em}
+.reasons .tags{grid-template-columns:repeat(5,1fr)}
+@media (max-width:860px){.reasons .tags{grid-template-columns:1fr 1fr}}
+.reasons .tags li{white-space:nowrap}
+
 /* journey timeline */
 .journey{background:var(--bg)}
 .path{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;list-style:none;margin:0;padding:0;position:relative}
