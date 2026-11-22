@@ -472,6 +472,11 @@ footer a:hover{color:var(--gold)}
 /* "let's talk" text sits at the top of the photo panel */
 .contact .side .over{justify-content:flex-start;background:linear-gradient(to bottom,color-mix(in srgb,var(--band) 94%,transparent) 0%,color-mix(in srgb,var(--band) 80%,transparent) 55%,color-mix(in srgb,var(--band) 35%,transparent) 100%)}
 
+/* four certificates */
+.certs ol{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.certs ol{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.certs ol{grid-template-columns:1fr}}
+
 /* journey timeline */
 .journey{background:var(--bg)}
 .path{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;list-style:none;margin:0;padding:0;position:relative}
@@ -533,17 +538,18 @@ footer a:hover{color:var(--gold)}
   <div class="text">
     <p class="eyebrow">נעים להכיר</p>
     <h2>אני בני</h2>
-    <p>התחלתי ללמוד עיסוי ב־2008, במכללת רידמן לרפואה משלימה ואינטגרטיבית. מאז לא הפסקתי ללמוד: טכניקות מתקדמות, ובהמשך עבודה עם רקמות עמוקות.</p>
+    <p>התחלתי ללמוד עיסוי ב־2008, במכללת רידמן לרפואה משלימה ואינטגרטיבית. מאז לא הפסקתי ללמוד: טכניקות מתקדמות, עבודה עם רקמות עמוקות ועיסוי ספורטאים.</p>
     <p>אני עובד עם אנשים שהגוף שלהם סוחב משהו: צוואר שלא מסתובב עד הסוף, גב תחתון שנתפס, כתפיים שמחזיקות יותר מדי, פציעה מהאימון שלא עוברת.</p>
     <p>אין אצלי עיסוי אחד שמתאים לכולם. כל טיפול נבנה סביבכם, והמטרה שלי פשוטה: שתצאו עם פחות כאב ויותר תנועה.</p>
     <div class="spec"><span>מתמחה ב:</span><div class="spec-list"><a href="#treatments">עיסוי רפואי משולב</a><a href="#treatments">עיסוי רקמות עמוקות</a><a href="#treatments">עיסוי ספורטאים</a></div></div>
   </div>
   <div class="certs">
-    <p class="certs-head"><b>ההכשרה שלי</b><span>מכללת רידמן · <strong>470</strong> שעות לימוד</span></p>
+    <p class="certs-head"><b>ההכשרה שלי</b><span>מכללת רידמן · <strong>4</strong> הכשרות</span></p>
     <ol>
       <li><span class="yr">2008</span><b>עיסוי שוודי הוליסטי</b><small>160 שעות אקדמיות</small></li>
       <li><span class="yr">2009</span><b>טכניקות עיסוי מתקדמות</b><small>151 שעות אקדמיות</small></li>
       <li><span class="yr">2022</span><b>עבודה עם רקמות עמוקות</b><small>159 שעות אקדמיות</small></li>
+      <li><span class="yr">2023</span><b>עיסוי ספורטאים</b><small>מכללת רידמן</small></li>
     </ol>
   </div>
 </div></section>
