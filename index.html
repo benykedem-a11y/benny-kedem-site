@@ -794,7 +794,7 @@ const WEB3FORMS_KEY = "";             // מפתח מ-web3forms.com: כל פני�
 // ----------------
 const $=id=>document.getElementById(id);
 if(!WEB3FORMS_KEY) $('consentRow').hidden=true; // no key yet: email relay is off, so no consent to ask for
-const SOCIAL={instagram:"",facebook:""}; // קישורים לאינסטגרם ולפייסבוק של בני; ריק = מוסתר
+const SOCIAL={instagram:"",facebook:"https://www.facebook.com/benny.k.mizrahi"}; // קישורים לאינסטגרם ולפייסבוק של בני; ריק = מוסתר
 document.querySelectorAll('[data-social]').forEach(a=>{const u=SOCIAL[a.dataset.social];if(u){a.href=u;a.hidden=false}});
 {const t=$('toTop');const upd=()=>t.classList.toggle('show',scrollY>innerHeight*.8);addEventListener('scroll',upd,{passive:true});upd();}
 
