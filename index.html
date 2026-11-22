@@ -491,6 +491,18 @@ body > div[dir="rtl"]{max-width:1320px;margin-inline:auto;background:var(--bg);b
 @media (max-width:860px){.reasons .tags{grid-template-columns:1fr 1fr}}
 .reasons .tags li{white-space:nowrap}
 
+/* compact footer */
+.contact{padding-block:0 clamp(28px,4vw,48px)}
+footer{padding-block:18px 14px}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 28px;font-size:.92rem}
+.f-brand{display:flex;align-items:baseline;gap:10px}
+.f-brand b{font-size:1.15rem;display:inline}
+.f-brand span{font-size:.85rem}
+.f-nav{gap:4px 18px}
+.f-contact{flex-direction:row;align-items:center;gap:14px}
+.f-note{flex-basis:100%;margin:2px 0 0;padding-top:10px;font-size:.8rem;text-align:center}
+@media (max-width:760px){footer{padding-bottom:76px}footer .wrap{justify-content:center;text-align:center}.f-nav{justify-content:center}}
+
 /* journey timeline */
 .journey{background:var(--bg)}
 .path{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;list-style:none;margin:0;padding:0;position:relative}
