@@ -430,6 +430,14 @@ section{overflow:hidden;overflow:clip}
 .contact .policy{gap:6px;font-size:.9rem;line-height:1.6;color:var(--band-muted);border-inline-start:2px solid var(--gold);padding-inline-start:14px}
 .contact .policy b{color:var(--band-fg);font-weight:600}
 
+/* six treatment cards: 3 + 3, illustrated placeholders for cards without a photo */
+.cards{grid-template-columns:repeat(3,1fr)}
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cards{grid-template-columns:1fr}}
+.card .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--gold);font-size:1.3rem;
+  background:radial-gradient(circle at 70% 25%,color-mix(in srgb,var(--gold) 22%,transparent),transparent 60%),linear-gradient(160deg,color-mix(in srgb,var(--accent) 55%,var(--band-card)),var(--band-card))}
+.card .ph span{font-family:var(--display);color:var(--band-fg)}
+
 /* journey timeline */
 .journey{background:var(--bg)}
 .path{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;list-style:none;margin:0;padding:0;position:relative}
@@ -563,7 +571,7 @@ section{overflow:hidden;overflow:clip}
   <svg class="deco" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" style="width:100%;height:46px;bottom:20px;left:0;fill:none;stroke:currentColor;opacity:.35"><path d="M0 35 C200 5 350 55 600 30 S1000 5 1200 35" stroke-width="1"/></svg>
   <div class="wrap">
   <div class="sec-head">
-    <div><p class="eyebrow">הטיפולים שלי</p><h2>ארבע דרכים לשחרר את הגוף</h2></div>
+    <div><p class="eyebrow">הטיפולים שלי</p><h2>שש דרכים לשחרר את הגוף</h2></div>
     <p class="note">בתחילת כל מפגש נשב לשיחה קצרה. לפיה אבחר את השיטה, ולפעמים אשלב בין כמה מהן.</p>
   </div>
   <div class="cards">
@@ -606,6 +614,26 @@ section{overflow:hidden;overflow:clip}
         <p>מתאים למי שרוצה לנשום, להשתחרר מעומס של שבוע ארוך, או למי שמעדיף מגע עדין יותר.</p>
         <ul class="chips"><li>רוגע והורדת סטרס</li><li>שחרור מתח בשרירים</li><li>מגע עדין</li></ul>
         <div class="meta"><span class="info"><b>משך:</b> יעודכן</span><a class="btn gold book" href="#contact" data-type="עיסוי שוודי">לקביעה</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ph" role="img" aria-label="איור של כוסות רוח"><svg viewBox="0 0 120 80" width="46%" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M14 58h28M18 58c0-14 2-26 10-30 8 4 10 16 10 30"/><path d="M46 58h28M50 58c0-16 2-30 10-34 8 4 10 18 10 34"/><path d="M78 58h28M82 58c0-14 2-26 10-30 8 4 10 16 10 30"/><path d="M8 66c20 6 84 6 104 0" opacity=".6"/></svg><span>כוסות רוח</span></div>
+      <div class="body">
+        <h3>טיפול בכוסות רוח</h3>
+        <p>הכוסות יוצרות ואקום על העור ומושכות את הרקמה כלפי מעלה. זה עוזר לשחרר שרירים תפוסים ונוקשות, ואפשר לשלב את זה בתוך עיסוי.</p>
+        <p>אחרי הטיפול יכולים להישאר על העור סימנים עגולים. הם נעלמים בדרך כלל תוך כמה ימים.</p>
+        <ul class="chips"><li>שרירים תפוסים</li><li>נוקשות</li><li>שילוב עם עיסוי</li></ul>
+        <div class="meta"><span class="info"><b>משך:</b> יעודכן</span><a class="btn gold book" href="#contact" data-type="טיפול בכוסות רוח">לקביעה</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ph" role="img" aria-label="איור של לב"><svg viewBox="0 0 120 80" width="40%" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 70C30 50 18 36 18 24a14 14 0 0 1 26-7l16 0a14 14 0 0 1 26 7c0 12-12 26-26 46z" transform="translate(0 0)"/><path d="M60 26c6 4 9 10 9 16" opacity=".6"/></svg><span>עיסוי בהריון</span></div>
+      <div class="body">
+        <h3>עיסוי לנשים בהריון</h3>
+        <p>עיסוי שמותאם להריון: בשכיבה על הצד, עם תמיכה של כריות ובלחץ עדין. הוא עוזר להקל על כאבי גב תחתון, על עומס ברגליים ועל המתח שמגיע עם השינויים בגוף.</p>
+        <p>לפני הטיפול נדבר על שלב ההריון ועל מה שמתאים לך. מומלץ לקבל אישור מהרופא או מהרופאה.</p>
+        <ul class="chips"><li>כאבי גב תחתון</li><li>עומס ברגליים</li><li>רוגע</li></ul>
+        <div class="meta"><span class="info"><b>משך:</b> יעודכן</span><a class="btn gold book" href="#contact" data-type="עיסוי לנשים בהריון">לקביעה</a></div>
       </div>
     </article>
   </div>
@@ -655,7 +683,7 @@ section{overflow:hidden;overflow:clip}
       <div class="f"><label for="name">שם מלא</label><input id="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
       <div class="f"><label for="phone">טלפון</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" required><span class="err" id="e-phone"></span></div>
       <div class="f full"><label for="type">איזה טיפול מעניין אתכם?</label>
-        <select id="type"><option>עוד לא בטוחים, אשמח להמלצה</option><option>עיסוי רפואי משולב</option><option>עיסוי רקמות עמוקות</option><option>עיסוי ספורטאים</option><option>עיסוי שוודי</option></select></div>
+        <select id="type"><option>עוד לא בטוחים, אשמח להמלצה</option><option>עיסוי רפואי משולב</option><option>עיסוי רקמות עמוקות</option><option>עיסוי ספורטאים</option><option>עיסוי שוודי</option><option>טיפול בכוסות רוח</option><option>עיסוי לנשים בהריון</option></select></div>
       <div class="f full"><label for="msg">מה כואב לכם? (לא חובה)</label><textarea id="msg"></textarea></div>
       <input type="checkbox" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <div class="f full policy">
