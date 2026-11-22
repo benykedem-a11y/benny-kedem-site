@@ -49,4 +49,4 @@ Settings → Pages → Custom domain, ואצל ספק הדומיין להגדי�
 
 ## קרדיט לתמונות
 - `img/cupping.webp`: Jakub Klucky ב-[Unsplash](https://unsplash.com/), ברישיון Unsplash (שימוש חופשי).
-- `img/prenatal.webp`: Monika Kozub ב-[Unsplash](https://unsplash.com/), ברישיון Unsplash (שימוש חופשי).
+- `img/prenatal.webp`: Jeferson Santu ב-[Unsplash](https://unsplash.com/), ברישיון Unsplash (שימוש חופשי).
