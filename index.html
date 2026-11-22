@@ -446,6 +446,10 @@ header.top .contact-strip .wrap{display:flex;flex-wrap:wrap;justify-content:cent
 .cs-item:hover,.cs-item:focus-visible{opacity:1;color:var(--gold)}
 @media (max-width:440px){header.top .contact-strip .wrap{gap:4px 16px;font-size:.86rem}}
 
+/* consent checkbox for the email relay */
+.contact .consent label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.9rem;line-height:1.6;color:var(--band-muted);cursor:pointer}
+.contact .consent input{width:18px;height:18px;padding:0;margin-top:4px;flex:none;accent-color:var(--gold)}
+
 /* journey timeline */
 .journey{background:var(--bg)}
 .path{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;list-style:none;margin:0;padding:0;position:relative}
@@ -688,7 +692,7 @@ header.top .contact-strip .wrap{display:flex;flex-wrap:wrap;justify-content:cent
       <div class="over">
         <p class="eyebrow">קביעת טיפול</p>
         <h2>בואו נדבר</h2>
-        <p>אני מגיע אליכם הביתה. ספרו לי בקצרה מה כואב לכם, ואחזור אליכם לתיאום. ככה נוכל להתחיל לעבוד כבר מהשיחה הראשונה.</p>
+        <p>אני מגיע אליכם הביתה. השאירו שם וטלפון, ואחזור אליכם לשיחה קצרה ולתיאום מועד.</p>
         <ul class="info-list">
           <li><span>טלפון</span><bdi dir="ltr">050-239-4939</bdi></li>
           <li><span>טיפולים</span>בביקור בית, אצלכם</li>
@@ -701,14 +705,14 @@ header.top .contact-strip .wrap{display:flex;flex-wrap:wrap;justify-content:cent
       <div class="f"><label for="phone">טלפון</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" required><span class="err" id="e-phone"></span></div>
       <div class="f full"><label for="type">איזה טיפול מעניין אתכם?</label>
         <select id="type"><option>עוד לא בטוחים, אשמח להמלצה</option><option>עיסוי רפואי משולב</option><option>עיסוי רקמות עמוקות</option><option>עיסוי ספורטאים</option><option>עיסוי שוודי</option><option>טיפול בכוסות רוח</option><option>עיסוי לנשים בהריון</option></select></div>
-      <div class="f full"><label for="msg">מה כואב לכם? (לא חובה)</label><textarea id="msg"></textarea></div>
       <input type="checkbox" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <div class="f full policy">
         <p><b>קביעת תור:</b> השליחה כאן היא פנייה ולא קביעת תור. התור נקבע רק אחרי שאחזור אליכם, נתאם יחד מועד ואאשר אותו.</p>
         <p><b>מדיניות ביטולים:</b> אפשר לבטל תור עד 12 שעות לפני מועדו. ביטול מאוחר יותר יחויב ב־25% מעלות הטיפול.</p>
         <p><b>מצב רפואי:</b> כדי שהטיפול יצליח ויתאים לכם, חשוב לספר לי מראש על כל בעיה רפואית ועל כל אבחנה שיש לכם.</p>
-        <p><b>פרטיות:</b> הפרטים שתמלאו נשלחים רק אליי, במייל ובוואטסאפ, כדי שאוכל לחזור אליכם ולתאם טיפול. האתר לא שומר אותם ולא מעביר אותם לאף אחד אחר. אין חובה לכתוב בטופס מידע רפואי, ואפשר לספר לי עליו בשיחה.</p>
+        <p><b>פרטיות:</b> הפרטים שתמלאו מיועדים רק לי, כדי שאוכל לחזור אליכם ולתאם טיפול. האתר עצמו לא שומר אותם. על מצב רפואי נדבר בשיחה, ולא בטופס.</p>
       </div>
+      <div class="f full consent" id="consentRow"><label for="consent"><input type="checkbox" id="consent"> אני מסכים/ה שהפרטים יישלחו לבני גם במייל, דרך Web3Forms, שירות חיצוני לשליחת טפסים שבו הם נשמרים עד 30 יום. בלי הסימון, הפנייה תישלח רק בוואטסאפ.</label></div>
       <div class="f full"><button class="btn gold send" type="submit">שליחה</button></div>
       <div class="done" id="done" hidden>
         <strong id="doneTitle">תודה, הפרטים מוכנים.</strong>
@@ -728,6 +732,7 @@ const WHATSAPP = "972502394939";      // הוואטסאפ של בני, בפור�
 const WEB3FORMS_KEY = "";             // מפתח מ-web3forms.com: כל פנייה תישלח גם למייל של בני
 // ----------------
 const $=id=>document.getElementById(id);
+if(!WEB3FORMS_KEY) $('consentRow').hidden=true; // no key yet: email relay is off, so no consent to ask for
 const SOCIAL={instagram:"",facebook:""}; // קישורים לאינסטגרם ולפייסבוק של בני; ריק = מוסתר
 document.querySelectorAll('[data-social]').forEach(a=>{const u=SOCIAL[a.dataset.social];if(u){a.href=u;a.hidden=false}});
 
@@ -776,16 +781,16 @@ $('form').addEventListener('submit',async e=>{
   $('e-name').textContent=n?'':'נא למלא שם';
   $('e-phone').textContent=okPhone?'':'נא למלא מספר טלפון תקין';
   if(!n||!okPhone) return;
-  const m=$('msg').value.trim(),t=$('type').value;
+  const m='',t=$('type').value;
   const text=`היי בני, כאן ${n} (${p}).\nמתעניין/ת ב: ${t}`+(m?`\n${m}`:'');
   $('wa').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(text);
   let mailed=false;
-  if(WEB3FORMS_KEY && !$('botcheck').checked){
+  if(WEB3FORMS_KEY && $('consent').checked && !$('botcheck').checked){
     const btn=e.submitter||document.querySelector('.send');btn.disabled=true;btn.textContent='שולח…';
     try{
       const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify({access_key:WEB3FORMS_KEY,subject:'פנייה חדשה מהאתר: '+n,from_name:'האתר של בני קדם',
-          'שם':n,'טלפון':p,'טיפול':t,'הודעה':m||'(ללא)'})});
+          'שם':n,'טלפון':p,'טיפול':t})});
       mailed=(await r.json()).success===true;
     }catch(_){}
     btn.disabled=false;btn.textContent='שליחה';
