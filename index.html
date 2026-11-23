@@ -83,7 +83,7 @@ nav a:hover{color:var(--ink)}
 
 /* hero: full-bleed photo with the motto over it; the photo drifts on scroll */
 .hero{--hero-fg:#F2F6FB;--hero-muted:#C9D6E4;--hero-accent:#A9CFF0;
-  background:#0B1726;color:var(--hero-fg);min-height:clamp(560px,86vh,820px);display:flex;align-items:center;padding-block:clamp(72px,10vw,120px)}
+  background:#0B1726;color:var(--hero-fg);min-height:clamp(520px,78vh,760px);display:flex;align-items:center;padding-block:clamp(64px,8vw,104px) clamp(36px,4vw,56px)}
 .hero > .wrap{width:100%}
 .hero-bg{position:absolute;inset:-10% 0 -10% 0;z-index:0;will-change:transform}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:22% 40%;display:block}
@@ -106,7 +106,7 @@ nav a:hover{color:var(--ink)}
 .facts b{display:block;font-family:var(--display);font-size:2rem;font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums}
 .facts span{color:var(--muted);font-size:.9rem}
 @media (max-width:860px){
-  .hero{min-height:auto;align-items:flex-end;padding-block:clamp(260px,60vw,380px) 72px}
+  .hero{min-height:auto;align-items:flex-end;padding-block:clamp(260px,60vw,380px) 36px}
   .hero-bg img{object-position:18% 30%}
   .hero-shade{background:linear-gradient(to top,rgba(9,20,35,.97) 0%,rgba(9,20,35,.88) 45%,rgba(9,20,35,.2) 80%,rgba(9,20,35,.05) 100%)}
   .hero .badge{position:static;display:inline-block;margin-top:24px}
@@ -156,7 +156,7 @@ nav a:hover{color:var(--ink)}
 @media (max-width:760px){.steps{grid-template-columns:1fr}}
 
 /* about */
-.about{background:var(--surface)}
+.about{background:var(--surface);padding-top:clamp(36px,4vw,56px)}
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:start}
 .about .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% 50%;border-radius:var(--r-lg);display:block}
 .about .text{display:flex;flex-direction:column;gap:18px;max-width:36em;min-width:0}
@@ -332,7 +332,7 @@ header.top.scrolled{box-shadow:0 8px 24px rgba(10,25,45,.12)}
 
 
 /* small reviews link on the hero photo */
-.hero .rev-link{position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(-1 * clamp(36px,6vw,72px));font-size:.92rem;color:var(--hero-muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .2s,border-color .2s}
+.hero .rev-link{position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(-1 * clamp(20px,2.6vw,34px));font-size:.92rem;color:var(--hero-muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .2s,border-color .2s}
 .hero .rev-link:hover,.hero .rev-link:focus-visible{color:var(--hero-fg);border-color:var(--gold)}
 @media (max-width:860px){.hero .rev-link{position:static;display:inline-block;margin-top:20px}}
 
@@ -588,7 +588,6 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
     </div>
     <a class="rev-link" href="https://search.google.com/local/reviews?placeid=ChIJTTHLI9S3AhUReR-AG2YUrLQ" target="_blank" rel="noopener"><span class="stars">★</span> <span class="g-rating">5.0</span> בגוגל · <span class="g-count">367</span> ביקורות</a>
   </div>
-  <a class="scroll-cue" href="#about" aria-label="גללו למטה"><span></span></a>
 </section>
 
 <section class="about" id="about"><div class="wrap">
