@@ -533,6 +533,22 @@ footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:spac
   .path::before{top:10px;bottom:10px;inset-inline:27px auto;width:2px;height:auto;background:repeating-linear-gradient(to bottom,var(--gold) 0 8px,transparent 8px 15px)}
   .path li{flex-direction:row;align-items:flex-start;text-align:start}
 }
+
+/* footer v3: clean three-zone layout */
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px 40px;font-size:.95rem}
+.f-nav{justify-content:center;gap:6px 26px}
+.f-contact{flex-direction:row;align-items:center;gap:18px}
+.f-bottom{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--band-fg) 12%,transparent)}
+.f-bottom .f-note{flex:none;margin:0;padding:0;border:0;font-size:.82rem;text-align:start}
+.a11y{flex:none;font-size:.82rem}.a11y[open]{flex-basis:100%}
+@media (max-width:760px){
+  footer .wrap{grid-template-columns:1fr;justify-items:center;text-align:center;gap:14px}
+  .f-brand{flex-direction:column;align-items:center;gap:2px}
+  .f-nav{gap:6px 20px}
+  .f-bottom{flex-direction:column;align-items:center;text-align:center;gap:8px}
+  .f-bottom .f-note{text-align:center}
+  .f-brand{order:1}.f-nav{order:2}.f-contact{order:3}.f-bottom{order:4}
+}
 </style>
 </head>
 <body>
@@ -797,9 +813,7 @@ footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:spac
   <div class="f-brand"><b>בני קדם</b><span>מטפל במגע · ביקורי בית</span></div>
   <nav class="f-nav" aria-label="ניווט תחתון"><a href="#about">נעים להכיר</a><a href="#treatments">טיפולים</a><a href="#reviews">ביקורות</a><a href="#contact">יצירת קשר</a></nav>
   <div class="f-contact"><bdi dir="ltr">050-239-4939</bdi><a href="https://wa.me/972502394939" target="_blank" rel="noopener">וואטסאפ</a></div>
-  <a class="f-top" href="#top">חזרה למעלה ↑</a>
-  <p class="f-note">© בני קדם · הטיפול אינו מחליף אבחון וטיפול רפואי.</p>
-  <details class="a11y"><summary>הצהרת נגישות</summary><p>האתר נבנה בעברית ובכיוון ימין לשמאל, וניתן לניווט במקלדת: קישור "דלג לתוכן" בראש העמוד, תוויות לכל שדות הטופס, טקסט חלופי לתמונות, ניגודיות צבעים לפי ההנחיות, ותנועה מופחתת למי שהגדיר זאת במכשיר. האתר נבדק בכלי בדיקה אוטומטי לפי WCAG 2.0 ברמה AA. אם נתקלתם בקושי, אשמח שתספרו לי בטלפון <bdi dir="ltr">050-239-4939</bdi> או בוואטסאפ, ואטפל בזה. עודכן לאחרונה: נובמבר 2026.</p></details>
+  <div class="f-bottom"><p class="f-note">© בני קדם · הטיפול אינו מחליף אבחון וטיפול רפואי.</p><details class="a11y"><summary>הצהרת נגישות</summary><p>האתר נבנה בעברית ובכיוון ימין לשמאל, וניתן לניווט במקלדת: קישור "דלג לתוכן" בראש העמוד, תוויות לכל שדות הטופס, טקסט חלופי לתמונות, ניגודיות צבעים לפי ההנחיות, ותנועה מופחתת למי שהגדיר זאת במכשיר. האתר נבדק בכלי בדיקה אוטומטי לפי WCAG 2.0 ברמה AA. אם נתקלתם בקושי, אשמח שתספרו לי בטלפון <bdi dir="ltr">050-239-4939</bdi> או בוואטסאפ, ואטפל בזה. עודכן לאחרונה: נובמבר 2026.</p></details></div>
 </div></footer>
 <a class="to-top" id="toTop" href="#top" aria-label="חזרה למעלה"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
 </div>
