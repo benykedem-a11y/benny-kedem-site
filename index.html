@@ -549,6 +549,12 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
   .f-bottom .f-note{text-align:center}
   .f-brand{order:1}.f-nav{order:2}.f-contact{order:3}.f-bottom{order:4}
 }
+
+/* design pass: one type family, one-colour motto, section fade-ins off (path animation kept) */
+body,.btn,.card h4{font-family:var(--display)}
+.hero h1{font-weight:600;letter-spacing:-.02em;line-height:1.02}
+html.anim .pre{opacity:1!important;transform:none!important}
+html.anim .reveal{transition:none!important}
 </style>
 </head>
 <body>
@@ -556,7 +562,7 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
 <div dir="rtl" lang="he">
 
 <header class="top"><div class="wrap">
-  <a class="brand" href="#top"><span class="mono" aria-hidden="true">ב״ק</span><span><b>בני קדם</b><small>מטפל במגע · מעסה טיפולי</small></span></a>
+  <a class="brand" href="#top"><span class="mono" aria-hidden="true">ב״ק</span><span><b>בני קדם</b><small>מטפל במגע, מעסה טיפולי</small></span></a>
   <nav aria-label="ניווט">
     <a href="#about">נעים להכיר</a><a href="#reasons">למה מגיעים</a><a href="#process">איך זה עובד</a><a href="#treatments">טיפולים</a><a href="#reviews">ביקורות</a>
   </nav>
@@ -578,8 +584,7 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
   <svg class="deco spark" aria-hidden="true" viewBox="0 0 24 24" style="width:12px;top:26%;right:49%;opacity:.7"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>
   <div class="wrap">
     <div class="copy" id="heroCopy">
-      <p class="eyebrow">המוטו שלי</p>
-      <h1>אפשר לחיות<br><em>ללא כאב.</em></h1>
+      <h1>אפשר לחיות<br>ללא כאב.</h1>
       <p class="lede">ובשבילו אני עובד: שתקומו בבוקר בלי שהגב נתפס, תסובבו את הראש בלי לחשוב פעמיים, ותחזרו לאימון בלי לפחד מהפציעה הבאה. הגוף יודע להשתחרר, ואני כאן כדי לעזור לו.</p>
       <div class="ctas">
         <a class="btn gold" href="#contact">לקביעת טיפול</a>
@@ -592,7 +597,6 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
 
 <section class="about" id="about"><div class="wrap">
   <div class="text">
-    <p class="eyebrow">נעים להכיר</p>
     <h2>אני בני</h2>
     <p>התחלתי ללמוד עיסוי ב־2008, במכללת רידמן לרפואה משלימה ואינטגרטיבית. מאז לא הפסקתי ללמוד: טכניקות מתקדמות, עבודה עם רקמות עמוקות ועיסוי ספורטאים.</p>
     <p>אני עובד עם אנשים שהגוף שלהם סוחב משהו: צוואר שלא מסתובב עד הסוף, גב תחתון שנתפס, כתפיים שמחזיקות יותר מדי, פציעה מהאימון שלא עוברת.</p>
@@ -616,7 +620,6 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
   <svg class="deco ripple" aria-hidden="true" viewBox="0 0 200 200" style="width:300px;bottom:-170px;right:-90px;opacity:.5"><circle cx="100" cy="100" r="30" stroke-width=".7"/><circle cx="100" cy="100" r="55" stroke-width=".6"/><circle cx="100" cy="100" r="80" stroke-width=".5"/></svg>
   <div class="wrap">
   <div class="copy">
-    <p class="eyebrow">למה מגיעים אליי</p>
     <h2 id="r-h">הגוף סוחב משהו? בואו נשחרר אותו.</h2>
     <p>אלה הדברים שאני פוגש הכי הרבה בטיפולים. אם אחד מהם מוכר לכם, אפשר להתחיל משיחה.</p>
   </div>
@@ -658,7 +661,7 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
   <svg class="deco spark" aria-hidden="true" viewBox="0 0 24 24" style="width:20px;top:64px;left:10%"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>
   <div class="wrap">
   <div class="sec-head">
-    <div><p class="eyebrow">מכאב לתנועה</p><h2>הדרך שלנו ביחד</h2></div>
+    <div><h2>הדרך שלנו ביחד</h2></div>
     <p class="note">ככה נראה טיפול אצלי, מהרגע שאני מגיע אליכם ועד שאתם קמים מהמיטה.</p>
   </div>
   <ol class="path">
@@ -675,7 +678,7 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
   <svg class="deco" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" style="width:100%;height:46px;bottom:20px;left:0;fill:none;stroke:currentColor;opacity:.35"><path d="M0 35 C200 5 350 55 600 30 S1000 5 1200 35" stroke-width="1"/></svg>
   <div class="wrap">
   <div class="sec-head">
-    <div><p class="eyebrow">הטיפולים שלי</p><h2>שש דרכים לשחרר את הגוף</h2></div>
+    <div><h2>שש דרכים לשחרר את הגוף</h2></div>
     <p class="note">בתחילת כל מפגש נשב לשיחה קצרה. לפיה אבחר את השיטה, ולפעמים אשלב בין כמה מהן.</p>
   </div>
   <div class="cards">
@@ -752,7 +755,7 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
   <svg hidden class="deco spark" aria-hidden="true" viewBox="0 0 24 24" style="width:18px;top:60px;right:40%"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>
   <div class="wrap">
   <div class="sec-head">
-    <div><p class="eyebrow">ביקורות מגוגל</p><h2>מה המטופלים שלי כותבים</h2></div>
+    <div><h2>מה המטופלים שלי כותבים</h2></div>
     <div class="g-links"><span class="rating"><span class="stars">★★★★★</span> <b class="g-rating">5.0</b> · <span class="g-count">367</span> ביקורות</span><a class="g-link" href="https://search.google.com/local/reviews?placeid=ChIJTTHLI9S3AhUReR-AG2YUrLQ" target="_blank" rel="noopener">לכל הביקורות בגוגל ←</a><a class="g-link" href="https://search.google.com/local/writereview?placeid=ChIJTTHLI9S3AhUReR-AG2YUrLQ" target="_blank" rel="noopener">כתבו ביקורת</a></div>
   </div>
   <div class="track" id="track" tabindex="0" aria-label="ביקורות">
@@ -774,7 +777,6 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
     <div class="side">
       <img src="img/room.webp" alt="">
       <div class="over">
-        <p class="eyebrow">קביעת טיפול</p>
         <h2>בואו נדבר</h2>
         <p>אני מגיע אליכם הביתה. השאירו שם וטלפון, ואחזור אליכם לשיחה קצרה ולתיאום מועד.</p>
         <ul class="info-list">
@@ -809,10 +811,10 @@ footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center
 </div></section>
 
 <footer><div class="wrap">
-  <div class="f-brand"><b>בני קדם</b><span>מטפל במגע · ביקורי בית</span></div>
+  <div class="f-brand"><b>בני קדם</b><span>מטפל במגע, בביקור בית</span></div>
   <nav class="f-nav" aria-label="ניווט תחתון"><a href="#about">נעים להכיר</a><a href="#treatments">טיפולים</a><a href="#reviews">ביקורות</a><a href="#contact">יצירת קשר</a></nav>
   <div class="f-contact"><bdi dir="ltr">050-239-4939</bdi><a href="https://wa.me/972502394939" target="_blank" rel="noopener">וואטסאפ</a></div>
-  <div class="f-bottom"><p class="f-note">© בני קדם · הטיפול אינו מחליף אבחון וטיפול רפואי.</p><details class="a11y"><summary>הצהרת נגישות</summary><p>האתר נבנה בעברית ובכיוון ימין לשמאל, וניתן לניווט במקלדת: קישור "דלג לתוכן" בראש העמוד, תוויות לכל שדות הטופס, טקסט חלופי לתמונות, ניגודיות צבעים לפי ההנחיות, ותנועה מופחתת למי שהגדיר זאת במכשיר. האתר נבדק בכלי בדיקה אוטומטי לפי WCAG 2.0 ברמה AA. אם נתקלתם בקושי, אשמח שתספרו לי בטלפון <bdi dir="ltr">050-239-4939</bdi> או בוואטסאפ, ואטפל בזה. עודכן לאחרונה: נובמבר 2026.</p></details></div>
+  <div class="f-bottom"><p class="f-note">© בני קדם. הטיפול אינו מחליף אבחון וטיפול רפואי.</p><details class="a11y"><summary>הצהרת נגישות</summary><p>האתר נבנה בעברית ובכיוון ימין לשמאל, וניתן לניווט במקלדת: קישור "דלג לתוכן" בראש העמוד, תוויות לכל שדות הטופס, טקסט חלופי לתמונות, ניגודיות צבעים לפי ההנחיות, ותנועה מופחתת למי שהגדיר זאת במכשיר. האתר נבדק בכלי בדיקה אוטומטי לפי WCAG 2.0 ברמה AA. אם נתקלתם בקושי, אשמח שתספרו לי בטלפון <bdi dir="ltr">050-239-4939</bdi> או בוואטסאפ, ואטפל בזה. עודכן לאחרונה: נובמבר 2026.</p></details></div>
 </div></footer>
 <a class="to-top" id="toTop" href="#top" aria-label="חזרה למעלה"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
 </div>
