@@ -429,6 +429,8 @@ section{overflow:hidden;overflow:clip}
 .certs-head b{font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--ink);line-height:1.2}
 .certs-head span{font-size:1.02rem;font-weight:600;color:var(--gold-ink);background:var(--gold-soft);border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-radius:999px;padding:4px 14px}
 .certs-head span{color:#7A5A15}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .certs-head span{color:var(--gold-ink)}}
+:root[data-theme="dark"] .certs-head span{color:var(--gold-ink)}
 .treat .eyebrow{color:#8DB4DA}
 .a11y{flex-basis:100%;font-size:.88rem}.a11y summary{cursor:pointer;color:var(--band-fg);display:inline}.a11y p{margin:.5em 0 0;max-width:70ch;line-height:1.6}
 .certs-head strong{font-family:var(--display);font-size:1.2em}
